@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
+</head>
+
+<body>
+    <div class="flex">
+        <div class="col error">
+            {% if messages %}
+            {% for message in messages %}
+            <p> {{message}} <p>
+                    {% endfor %}
+                    {% endif %}
+        </div>
+        <div class="col">
+            <h1 class="header">REGISTER</h1>
+            <form action="/register" class="flex-col" method="POST">
+                {% csrf_token %}
+                <p>Enter your first name: <input type="text" name="first_name"> </p>
+                <p>Enter your last name: <input type="text" name="last_name"> </p>
+                <p>Email: <input type="email" name="email"> </p>
+                <p>Password: <input type="password" name="bc1"> </p>
+                <p>Re-type password: <input type="password" name="bc2"> </p>
+                <input class="btn" type="submit" class="form" value="Register">
+            </form>
+        </div>
+        <div class="col">
+            <h1 class="header">LOGIN</h1>
+            <form action='/login' method='post'>
+                {% csrf_token %}
+                <p>Login email: <input type="text" name="email"> </p>
+                <p>Login password: <input type="password" name="bc1"> </p>
+                <input class="btn" type='submit' value='Login'>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

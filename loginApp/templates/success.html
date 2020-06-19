@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
+</head>
+
+<body>
+    <div class="flex">
+        <div class="col2">
+            <h1>Welcome back ! {{user.first_name}} {{user.last_name}}  </h1>
+            <h2>your encrypted password is:</h2>
+            <h2>{{user.bc1}}</h2>
+            <img src="{% static 'img/pepelangelo.jpg' %}" />
+        </div>
+    </div>
+</body>
+</html>
